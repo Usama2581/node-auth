@@ -1,15 +1,15 @@
 const express = require('express')
 const db = require('./config/db')
 const app = express()
-const helmet = require('helmet')
+const port = process.env.PORT || 4000;
 
 
 db.connection
 .once('open', () => console.log("connected to db"))
 .on("error", (err) => console.log("error connecting db -->", err))
 
-app.listen(5000, function () {
-    console.log('App listening to Port 4000')
+app.listen(port, function () {
+    console.log('App listening to Port' + port)
 })
 
  
